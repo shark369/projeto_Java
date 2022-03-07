@@ -1,0 +1,28 @@
+//Crie uma função recursiva que calcula o máximo divisor comum entre dois números. Teste a lógica da função no programa principal.
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        int valor1, valor2;
+        
+        System.out.println("Informe o primeiro número: ");
+        valor1 = ler.nextInt();
+        System.out.println("Informe o segundo número: ");
+        valor2 = ler.nextInt();
+        
+        System.out.println("MDC: " + MDC(valor1, valor2));
+    }
+
+  public static int MDC(int a, int b){
+    int resto;
+  
+    while(b != 0){
+      resto = a % b;
+      a = b;
+      b = resto;
+    }
+    return a;
+  }
+}
