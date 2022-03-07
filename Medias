@@ -1,0 +1,46 @@
+//programa para calcular media aritimetica e ponderada.
+import java.util.Scanner;
+
+public class Main {
+      
+    public static double nota1, nota2, nota3;
+    public static String escolha;
+
+    public static double calcularMediaA(){
+
+      return (nota1 + nota2 + nota3)/3;
+    }
+  
+    public static double calcularMediaP(){
+
+      return ((nota1 * 5) + (nota2 * 3) + (nota3 * 2))/10;       
+    }
+   
+    
+    public static void main(String[] args) {
+      
+        Scanner leitor = new Scanner(System.in);
+        
+        System.out.println("Informe o valor da primeira nota: ");
+        nota1 = leitor.nextDouble();
+        
+        System.out.println("Informe o valor da segunda nota: ");
+        nota2 = leitor.nextDouble();
+        
+        System.out.println("Informe o valor da terceira nota: ");
+        nota3 = leitor.nextDouble();
+      
+        //informar em maiúsculo 
+        System.out.println("\n DIGITE:\n(A) se deseja média aritmética \n(P) se deseja a média ponderada");
+        escolha = leitor.next();
+
+      if(escolha.equals("A")) {
+        calcularMediaA();
+        System.out.printf("A sua média é: %.2f",calcularMediaA());
+        }
+      if(escolha.equals("P")) {
+        calcularMediaP();
+        System.out.printf("A sua média é: %.2f",calcularMediaP());
+        }
+    }
+}
