@@ -1,0 +1,57 @@
+//Escreva um programa que armazene os dados relacionados a um filme (nome, autor, ano, preço) em uma estrutura de dados do tipo registro. Crie rotinas para ler e para imprimir
+os dados desse tipo de registro. Crie uma rotina main para ler e imprimir os dados de 3 diferentes filmes.
+
+//importando a classe scanner
+import java.util.Scanner;
+
+public class Main {
+  public static Scanner sc = new Scanner(System.in);
+
+  public static final int tamanho = 1000;
+  public static int i=1, ano[] = new int[tamanho];
+  public static float preco[] = new float[tamanho];    
+  public static String autor[] = new String[tamanho], nome[] = new String[tamanho];
+  public static int qtd = 2;//quantidade de livro
+  public static void main(String[] args){
+
+    entrada();
+    System.out.println("-----------------------------");
+    saida();
+  }
+  
+  // função para Limpar o Scanner
+	protected static void clearBuffer(Scanner sc) {
+		if (sc.hasNextLine()) {
+			sc.nextLine();
+		}
+	} // FIm da Limpeza do Buffer
+  
+  public static void entrada(){
+    
+    for (i = 1; i <= qtd; i++){
+      
+      System.out.println("\nnome do autor:");
+      autor[i] = sc.nextLine();
+      System.out.println("nome do filme:");
+      nome[i] = sc.nextLine();
+      System.out.println("Informe o ano do filme:");
+      ano[i] = sc.nextInt();
+      System.out.println("informe o preço:");
+      preco[i] = sc.nextFloat();
+      clearBuffer(sc);
+    }
+  }
+  
+  public static void saida(){
+    for (i = 1; i <= qtd; i++){
+      
+      System.out.printf("informaçoes do livro %d:",i);
+      System.out.printf("\nNome: %s\n",nome[i]);
+      System.out.printf("Autor: %s\n",autor[i]);
+      System.out.printf("Ano: %d\n",ano[i]);
+      System.out.printf("Preço: R$ %.2f\n",preco[i]);
+      System.out.println("");
+    }
+  }
+}
+
